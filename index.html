@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Detective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="title">Dev Detective</h1>
+            <div class="btn-mode">
+                <p class="mode-text">DARK</p>
+                <div class="icon-container">
+                    <img id="mode-icon" src="./assets/images/moon-icon.svg" alt="">
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main-app">
+                <div class="search-bar-container">
+                    <input type="text" id="user-name" name="inp" placeholder="Enter a Github Username.." required>
+                    <div class="error-div">
+                        <p class="error-msg">No search result found</p>
+                    </div>
+                    <button class="search-btn" id="submit">Search</button>
+                </div>
+
+
+                <div class="user-info-container">
+                    <div class="profile-header">
+                        <img src="avatar" src="#" alt="">
+                        <div class="profile-info-container">
+                            <div class="profile-name">
+                                <p class="user-name"></p>
+                                <a href="#" id="user-id" target="_blank" rel="noopener noreferrer"></a>
+                            </div>
+                            <p id="date"></p>
+                        </div>
+                        <p id="desc"></p>
+                    </div>
+
+                    <div class="count-container">
+                        <div class="profile-stat">
+                            <div class="stat-title">Repos</div>
+                            <p id="repo" class="stat-value"></p>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="stat-title">Followers</div>
+                            <p id="followers" class="stat-value"></p>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="stat-title">Following</div>
+                            <p id="following" class="stat-value"></p>
+                        </div>
+                    </div>
+
+                    <div class="other-info">
+                        <div class="profile-container">
+                            <div class="bottom-icon"><img src="./assets/images/location-icon.svg" alt=""></div>
+                            <p id="location"></p>
+                        </div>
+                        <div class="profile-container">
+                            <div class="bottom-icon"><img src="./assets/images/website-icon.svg" alt=""></div>
+                            <a href="#" id="page"></a>
+                        </div>
+                        <div class="profile-container">
+                            <div class="bottom-icon"><img src="./assets/images/twitter-icon.svg" alt=""></div>
+                            <a href="#" id="twitter"></a>
+                        </div>
+                        <div class="profile-container">
+                            <div class="bottom-icon"><img src="./assets/images/company-icon.svg" alt=""></div>
+                            <p id="company"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
