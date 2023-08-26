@@ -13,7 +13,7 @@
     <div class="wrapper">
         <header class="header">
             <h1 class="title">Dev Detective</h1>
-            <div class="btn-mode">
+            <div id="btn-mode">
                 <p class="mode-text">DARK</p>
                 <div class="icon-container">
                     <img id="mode-icon" src="./assets/images/moon-icon.svg" alt="">
@@ -21,62 +21,72 @@
             </div>
         </header>
         <main>
-            <div class="main-app">
+            <div id="app">
                 <div class="search-bar-container">
-                    <input type="text" id="user-name" name="inp" placeholder="Enter a Github Username.." required>
+
+                    <input type="text" id="input" name="inp" placeholder="Enter a Github Username.." required>
                     <div class="error-div">
-                        <p class="error-msg">No search result found</p>
+                        <p id="error-msg">No search result found</p>
                     </div>
                     <button class="search-btn" id="submit">Search</button>
                 </div>
 
 
                 <div class="user-info-container">
-                    <div class="profile-header">
-                        <img src="avatar" src="#" alt="">
-                        <div class="profile-info-container">
-                            <div class="profile-name">
-                                <p class="user-name"></p>
-                                <a href="#" id="user-id" target="_blank" rel="noopener noreferrer"></a>
+                    <div class="loading-container">
+                        <img src="./assets/images/25 (3).gif" alt="">
+                        <p>Loading..</p>
+                    </div>
+
+                    <div class="profile-content">
+                        <div class="profile-header">
+                            <img id="avatar" src="#" alt="">
+                            <div class="profile-info-container">
+                                <div class="profile-name">
+                                    <p id="user-name"></p>
+                                    <a href="#" id="user-id" target="_blank" rel="noopener noreferrer"></a>
+                                </div>
+                                <p id="date"></p>
                             </div>
-                            <p id="date"></p>
                         </div>
+
                         <p id="desc"></p>
-                    </div>
 
-                    <div class="count-container">
-                        <div class="profile-stat">
-                            <div class="stat-title">Repos</div>
-                            <p id="repo" class="stat-value"></p>
+                        <div class="count-container">
+                            <div class="profile-stat">
+                                <div class="stat-title">Repos</div>
+                                <p id="repos" class="stat-value"></p>
+                            </div>
+                            <div class="profile-stat">
+                                <div class="stat-title">Followers</div>
+                                <p id="followers" class="stat-value"></p>
+                            </div>
+                            <div class="profile-stat">
+                                <div class="stat-title">Following</div>
+                                <p id="following" class="stat-value"></p>
+                            </div>
                         </div>
-                        <div class="profile-stat">
-                            <div class="stat-title">Followers</div>
-                            <p id="followers" class="stat-value"></p>
-                        </div>
-                        <div class="profile-stat">
-                            <div class="stat-title">Following</div>
-                            <p id="following" class="stat-value"></p>
+    
+                        <div class="other-info">
+                            <div class="profile-container">
+                                <div class="bottom-icon"><img src="./assets/images/location-icon.svg" alt=""></div>
+                                <p id="location"></p>
+                            </div>
+                            <div class="profile-container">
+                                <div class="bottom-icon"><img src="./assets/images/website-icon.svg" alt=""></div>
+                                <a href="#" id="page"></a>
+                            </div>
+                            <div class="profile-container">
+                                <div class="bottom-icon"><img src="./assets/images/twitter-icon.svg" alt=""></div>
+                                <a href="#" id="twitter"></a>
+                            </div>
+                            <div class="profile-container">
+                                <div class="bottom-icon"><img src="./assets/images/company-icon.svg" alt=""></div>
+                                <p id="company"></p>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="other-info">
-                        <div class="profile-container">
-                            <div class="bottom-icon"><img src="./assets/images/location-icon.svg" alt=""></div>
-                            <p id="location"></p>
-                        </div>
-                        <div class="profile-container">
-                            <div class="bottom-icon"><img src="./assets/images/website-icon.svg" alt=""></div>
-                            <a href="#" id="page"></a>
-                        </div>
-                        <div class="profile-container">
-                            <div class="bottom-icon"><img src="./assets/images/twitter-icon.svg" alt=""></div>
-                            <a href="#" id="twitter"></a>
-                        </div>
-                        <div class="profile-container">
-                            <div class="bottom-icon"><img src="./assets/images/company-icon.svg" alt=""></div>
-                            <p id="company"></p>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </main>
