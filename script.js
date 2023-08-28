@@ -7,6 +7,8 @@ const get= (param) => document.getElementById(`${param}`);
 const btnSubmit=get('submit');
 const input= get('input');
 const noResult= get('error-msg');
+const modetext = get("mode-text");
+const modeicon = get("mode-icon");
 
 let darkMode=false;
 
@@ -19,7 +21,7 @@ btnSubmit.addEventListener('click', function (){
     }   
 });
 
-input.addEventListener('click', function (){
+input.addEventListener('input', function (){
     noResult.style.display='none';
 })
 
@@ -109,3 +111,44 @@ btnMode.addEventListener('click', function (){
     else
         lightModeProperties();
 });
+
+const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+console.log(prefersDarkMode)
+
+if(localStorage.getItem("dark-mode")){
+    console.log('set to dark mode');
+    darkModeProperties(); 
+}
+else{
+    localStorage.setItem("dark-mode", prefersDarkMode);
+    lightModeProperties();
+    console.log('set to light mode')
+}
+
+
+  
+function darkModeProperties() {
+    root.setProperty("--lm-bg", "#141D2F");
+    root.setProperty("--lm-bg-content", "#1E2A47");
+    root.setProperty("--lm-text", "white");
+    root.setProperty("--lm-text-alt", "white");
+    root.setProperty("--lm-shadow-xl", "rgba(70,88,109,0.15)");
+    modetext.innerText = "LIGHT";
+    modeicon.src = "./assets/images/sun-icon.svg";
+    root.setProperty("--lm-icon-bg", "brightness(1000%)");
+    darkMode = true;
+    localStorage.setItem("dark-mode", true);
+}
+
+function lightModeProperties() {
+    root.setProperty("--lm-bg", "#F6F8FF");
+    root.setProperty("--lm-bg-content", "#FEFEFE");
+    root.setProperty("--lm-text", "#4B6A9B");
+    root.setProperty("--lm-text-alt", "#2B3442");
+    root.setProperty("--lm-shadow-xl", "rgba(70, 88, 109, 0.25)");
+    modetext.innerText = "DARK";
+    modeicon.src = "./assets/images/moon-icon.svg";
+    root.setProperty("--lm-icon-bg", "brightness(100%)");
+    darkMode = false;
+    localStorage.setItem("dark-mode", false);
+}
